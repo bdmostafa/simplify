@@ -9,6 +9,9 @@
         "simplify",
         "npm",
         "package",
-        "string"
+        "string",
+        "token",
+        "makeToken",
+        "verifyToken"
     ]
 }
