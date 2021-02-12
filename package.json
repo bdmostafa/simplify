@@ -1,0 +1,14 @@
+{
+    "name": "@mdmostafa/simplify",
+    "version": "2.0.0",
+    "description": "Removes all spaces from a string",
+    "license": "MIT",
+    "repository": "bdmostafa/simplify",
+    "main": "index.js",
+    "keywords": [
+        "simplify",
+        "npm",
+        "package",
+        "string"
+    ]
+}
