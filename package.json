@@ -1,6 +1,6 @@
 {
     "name": "@mdmostafa/simplify",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "description": "Removes all spaces from a string",
     "license": "MIT",
     "repository": "bdmostafa/simplify",
