@@ -14,7 +14,7 @@ $ npm install @mdmostafa/simplify
 ## Usage
 
 ```js
-const { makeString, makeToken, verifyToken } = require("@mdmostafa/simplify");
+const { makeString, makeToken, verifyToken, Events } = require("@mdmostafa/simplify");
 
 makeString("Bangla desh");
 //=> "Bangladesh!"
@@ -36,5 +36,15 @@ verifyToken("bangladesh", "secretKey");
 
 verifyToken("bangladesh", "abcd");
 //=> Your key/string is not valid
+
+const myEvent = new Events();
+
+// Event listening
+myEvent.listen('loadMsg');
+//=> Listening to your event...
+//=> Hello Bangladesh!
+
+// creating event with message
+myEvent.log('loadMsg', 'Hello Bangladesh!');
 
 ```

@@ -1,5 +1,6 @@
 // Dependencies
 const crypto = require('crypto');
+const Events = require('./events');
 
 // Module scaffolding
 const functions = {};
@@ -54,7 +55,7 @@ functions.verifyToken = (str, secretKey) => {
     }
 };
 
-// console.log(functions.makeToken("bangladesh", "secretKey"));
-// console.log(functions.verifyToken("bangladesh", "abcd"));
-// console.log(global.localStorage)
+// Event emit and listening
+functions.Events = Events;
+
 module.exports = functions;
