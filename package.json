@@ -12,6 +12,11 @@
         "string",
         "token",
         "makeToken",
-        "verifyToken"
+        "verifyToken",
+        "event-listen",
+        "event-register",
+        "encrypt",
+        "decrypt",
+        "buffer"
     ]
 }

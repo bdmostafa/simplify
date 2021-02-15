@@ -14,14 +14,14 @@ $ npm install @mdmostafa/simplify
 ## Usage
 
 ```js
-const { makeString, makeToken, verifyToken, Events } = require("@mdmostafa/simplify");
+const { makeString, makeToken, verifyToken, Events, encrypt, decrypt } = require("@mdmostafa/simplify");
 
 makeString("Bangla desh");
 //=> "Bangladesh!"
 
 makeString(1234);
 //=> Uncaught TypeError: makeString wants a string!
-//    at tiny (<anonymous>:2:41)
+//    at simplify (<anonymous>:2:41)
 //    at <anonymous>:1:1
 
 makeToken("bangladesh", "secretKey");
@@ -46,5 +46,27 @@ myEvent.listen('loadMsg');
 
 // creating event with message
 myEvent.log('loadMsg', 'Hello Bangladesh!');
+
+// Encrypt - Decrypt Usages text or buffer
+const secretKey = 'OVH6sdmpNWjRR+qC*(7rdxs01lwH654@';
+
+const hash = encrypt('Hello Node JS!', secretKey);
+
+const hashFromBuffer = encrypt(Buffer.from('Hello Node JS!', 'utf8'), secretKey);
+
+console.log(hash);
+
+//=> {
+//=>     iv: '418e5653829e3c902a4512e260ff356d',
+//=>     content: '9e6e67bd5715c72a47fb6434cd6a'
+//=> }
+
+const txt = decrypt(hash, secretKey);
+const txt2 = decrypt(hashFromBuffer, secretKey);
+
+console.log(txt); 
+//=> Hello Node JS!
+console.log(txt2); 
+//=> Hello Node JS!
 
 ```

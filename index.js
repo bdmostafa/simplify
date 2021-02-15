@@ -1,6 +1,7 @@
 // Dependencies
 const crypto = require('crypto');
 const Events = require('./events');
+const { encrypt, decrypt } = require('./encrypt-decrypt');
 
 // Module scaffolding
 const functions = {};
@@ -57,5 +58,9 @@ functions.verifyToken = (str, secretKey) => {
 
 // Event emit and listening
 functions.Events = Events;
+
+// Encrypt-Decrypt with 32 length secret key
+functions.encrypt = encrypt;
+functions.decrypt = decrypt;
 
 module.exports = functions;
